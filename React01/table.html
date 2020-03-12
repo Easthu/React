@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="../base/react.min.js"></script>
+  <script src="../base/react-dom.min.js"></script>
+  <script src="../base/browser.min.js"></script>
+  <body>
+    <div id="app"></div>
+
+    <script type="text/babel">
+      let Component = React.createClass({
+        getInitialState(){
+          return{
+            list:[
+                [" "," ",""," "," "],
+                [" "," ",""," "," "],
+                [" "," ",""," "," "],
+                [" "," ",""," "," "],
+                [" "," ",""," "," "],
+            ],
+            new:"red",
+            old:"blue"
+          }
+        },
+        renderlist(){
+            let arr = []
+            for (let i = 0; i < this.state.list.length; i++) {
+                let temp = []
+                for (let j = 0; j < this.state.list[i].length; j++) {
+                    temp.push(<td >{this.state.list[i][j]}</td>)
+                }
+                arr.push( <tr className={i%2?'red':'blue'}>{temp}</tr> )
+            }
+            return arr
+        },
+        
+        render() {
+            console.log(this.state.list)
+            return(
+              <div>
+                <table>
+                  {this.renderlist()}
+                </table>
+              </div>
+                
+            )
+    }
+
+      })
+      ReactDOM.render(<Component/>,document.getElementById('app'))
+    </script>
+<style>
+    table{
+        width: 300px;
+        margin: auto;
+        width: 500px;
+    }
+    tr{
+        height: 100px;
+        /* background: blue; */
+        text-align: center;
+    }
+    .red{
+        background: violet;
+    }
+    .blue{
+        background: purple;
+    }
+    .w{
+      background: red;
+    }
+    .b{
+      background: seagreen;
+    }
+</style>
+</body>
+</html>
