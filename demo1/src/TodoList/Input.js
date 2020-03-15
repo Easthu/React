@@ -2,7 +2,7 @@ import React,{ Component} from 'react'
 // import { render } from 'react-dom'
 class Input extends Component{
     render(){
-        console.log(this)
+        // console.log(this)
         return(
             <div>
                 <input type='text' ref='input'/>
