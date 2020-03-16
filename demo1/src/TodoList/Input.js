@@ -11,6 +11,7 @@ class Input extends Component{
                     this.props.addFun(value)
                 }}>add</button>
             </div>
+            
         )
     }
 }
