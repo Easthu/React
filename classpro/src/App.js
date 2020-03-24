@@ -1,11 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import Router from './router/index'
 function App() {
   return (
     <div className="App">
-      new
+      <Router></Router>
     </div>
   );
 }
